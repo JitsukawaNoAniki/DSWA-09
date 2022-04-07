@@ -1,10 +1,8 @@
 angular.module('ifsp').controller('CursosController',
-    function($resource, $scope) {
+    function(curso, $scope) {
         $scope.cursos = [];
         $scope.filtro = '';
         $scope.mensagem = { texto: '' };
-        var Curso = $resource('/cursos/:id');
-
         function buscaCursos() {
             Curso.query(
                 function(cursos) {
